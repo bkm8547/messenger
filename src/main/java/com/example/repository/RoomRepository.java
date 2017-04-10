@@ -2,8 +2,8 @@ package com.example.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.domain.User;
+import com.example.domain.Room;
 
-public interface UserRepository extends JpaRepository<User, String>{
+public interface RoomRepository extends JpaRepository<Room, Long>{
 
 }

@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RoomController {
-	@RequestMapping(value="/Room",method=RequestMethod.GET)
+	@RequestMapping(value="/room",method=RequestMethod.GET)
 	public void getRoom(){
 		
 	}
-	@RequestMapping(value="/Room",method=RequestMethod.POST)
+	@RequestMapping(value="/room",method=RequestMethod.POST)
 	public void insertRoom(){
 		
 	}
-	@RequestMapping(value="/Room",method=RequestMethod.DELETE)
+	@RequestMapping(value="/room",method=RequestMethod.DELETE)
 	public void deleteRoom(){
 		
 	}
-	@RequestMapping(value="/Room",method=RequestMethod.PUT)
+	@RequestMapping(value="/room",method=RequestMethod.PUT)
 	public void modifyRoom(){
 		
 	}

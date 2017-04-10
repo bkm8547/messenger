@@ -5,31 +5,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.domain.UserDomain;
+import com.example.domain.User;
+import com.example.implement.UserImplement;
 import com.example.repository.UserRepository;
 
 @RestController
-
 public class UserController {
 	@Autowired
-	UserRepository userRepository;
-	@RequestMapping(value="/User",method=RequestMethod.GET)
-	public void getUser(UserDomain user){
-		userRepository.findOne(user.getId());
+	UserImplement userImplement;
+	
+	@RequestMapping(value="/user",method=RequestMethod.GET)
+	public void getUser(User user){
+		userImplement.saveUser(user);
 	}
-	@RequestMapping(value="/User",method=RequestMethod.POST)
-	public void insertUser(UserDomain user){
-		userRepository.save(user);		
+	@RequestMapping(value="/user",method=RequestMethod.POST)
+	public User insertUser(User user){
+		userImplement.saveUser(user);	
+		return user;
 	}
-	@RequestMapping(value="/User",method=RequestMethod.DELETE)
-	public void deleteUser(UserDomain user){
-		userRepository.delete(user);
+	@RequestMapping(value="/user",method=RequestMethod.DELETE)
+	public void deleteUser(User user){
+		userImplement.saveUser(user);
 		
 	}
-	@RequestMapping(value="/User",method=RequestMethod.PUT)
-	public void modifyUser(UserDomain user){
-		UserDomain dbUser=userRepository.findOne(user.getId());
-		user.setId(dbUser.getId());
-		userRepository.save(user);
+	@RequestMapping(value="/user",method=RequestMethod.PUT)
+	public void modifyUser(User user){
+		userImplement.saveUser(user);
 	}
 }
